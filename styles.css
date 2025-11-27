@@ -256,11 +256,11 @@ a:hover {
   transform: translateY(-2px);
 }
 
-.features, .services, .departments, .testimonials, .library, .auth, .order-form, .dashboard, .payments, .contact {
+.features, .services, .departments, .testimonials, .library, .auth, .order-form, .payments, .contact {
   padding: 4rem 5vw;
 }
 
-.features h2, .services h2, .departments h2, .testimonials h2, .library h2, .auth h2, .order-form h2, .dashboard h2, .payments h2, .contact h2 {
+.features h2, .services h2, .departments h2, .testimonials h2, .library h2, .auth h2, .order-form h2, .payments h2, .contact h2 {
   margin: 0 0 1rem 0;
 }
 
@@ -529,70 +529,6 @@ textarea {
   border-radius: 10px;
 }
 
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1rem;
-}
-
-.status {
-  padding: 0.2rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  background: rgba(176, 0, 32, 0.15);
-  color: #ff6b81;
-}
-
-.status.success {
-  background: rgba(46, 204, 113, 0.15);
-  color: #2ecc71;
-}
-
-.status.warning {
-  background: rgba(241, 196, 15, 0.15);
-  color: #f1c40f;
-}
-
-.pill-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-top: 1rem;
-}
-
-.pill-row span {
-  background: rgba(255, 255, 255, 0.06);
-  padding: 0.35rem 0.8rem;
-  border-radius: 999px;
-  font-size: 0.9rem;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-}
-
-table th, table td {
-  padding: 0.5rem;
-  text-align: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  color: var(--muted);
-}
-
-.list {
-  padding-left: 1rem;
-  color: var(--muted);
-  margin: 0;
-}
-
-.reports {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 0.75rem;
-  margin-top: 1rem;
-}
-
 .payments .grid {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
@@ -601,6 +537,12 @@ table th, table td {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.25rem;
+}
+
+.list {
+  padding-left: 1rem;
+  color: var(--muted);
+  margin: 0;
 }
 
 .contact .map {
@@ -681,9 +623,9 @@ table th, table td {
 }
 
 @media (max-width: 600px) {
-  .hero, .features, .services, .departments, .testimonials, .library, .auth, .order-form, .dashboard, .payments, .contact, .cta-band {
-    padding: 3rem 6vw;
-  }
+    .hero, .features, .services, .departments, .testimonials, .library, .auth, .order-form, .payments, .contact, .cta-band {
+      padding: 3rem 6vw;
+    }
 
   .topbar {
     padding: 0.75rem 5vw;
