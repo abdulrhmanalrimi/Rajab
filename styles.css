@@ -77,6 +77,11 @@ a:hover {
   cursor: pointer;
 }
 
+.cta-row {
+  display: flex;
+  gap: 0.6rem;
+}
+
 .cta {
   background: linear-gradient(135deg, #ff3b3b, #b00020);
   color: var(--white);
@@ -84,6 +89,11 @@ a:hover {
   border-radius: 12px;
   font-weight: 700;
   box-shadow: var(--shadow);
+}
+.cta.ghost {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--white);
 }
 
 .hero {
@@ -130,6 +140,22 @@ a:hover {
   border-radius: var(--radius);
   padding: 1.5rem;
   box-shadow: var(--shadow);
+}
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.whatsapp-link {
+  color: #25d366;
+  font-weight: 700;
+}
+
+.whatsapp-link:hover {
+  color: #1ebe5d;
 }
 
 .panel-card h3 {
@@ -311,6 +337,89 @@ a:hover {
   gap: 1rem;
 }
 
+.hint {
+  color: var(--muted);
+  margin: 0.25rem 0 0.5rem;
+}
+
+.student-space {
+  margin: 0 5vw 4rem;
+  background: linear-gradient(120deg, rgba(176, 0, 32, 0.18), rgba(15, 15, 20, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.space-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.space-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.space-card {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 1.25rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.space-card.muted {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.tasks {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0.75rem 0 1rem;
+}
+
+.tasks li {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  color: var(--light);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.info-box {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.75rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--light);
+}
+
+.info-box a {
+  color: #25d366;
+}
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(120%);
+  background: #25d366;
+  color: #0f0f14;
+  padding: 0.85rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  font-weight: 700;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
 label {
   display: grid;
   gap: 0.3rem;
@@ -478,6 +587,8 @@ table th, table td {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
 }
 
 .newsletter input {

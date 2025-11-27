@@ -22,7 +22,10 @@
       <a href="#contact">تواصل معنا</a>
       <a href="#auth">تسجيل الدخول</a>
     </nav>
-    <a class="cta" href="#order">اطلب خدمتك الآن</a>
+    <div class="cta-row">
+      <a class="cta" href="#order">اطلب خدمتك الآن</a>
+      <a class="cta ghost" href="https://wa.me/967781752213" target="_blank" rel="noreferrer">استشارات واتساب فورية</a>
+    </div>
   </header>
 
   <main>
@@ -52,7 +55,10 @@
       </div>
       <div class="hero-panel">
         <div class="panel-card">
-          <h3>تحديثات سريعة</h3>
+          <div class="panel-heading">
+            <h3>تحديثات سريعة</h3>
+            <a class="whatsapp-link" href="https://wa.me/967781752213" target="_blank" rel="noreferrer">استشارات فورية: ‎+967 781 752 213</a>
+          </div>
           <ul>
             <li>إطلاق لوحة مالية للمحاسبين لمتابعة الدفعات الجزئية.</li>
             <li>إشعارات بريدية فورية عند تغيير حالة الطلب.</li>
@@ -261,6 +267,28 @@
           <p>ممارسات أمن وحوكمة بيانات</p>
         </div>
       </div>
+      <div class="auth-forms">
+        <form class="card">
+          <h3>تسجيل حساب طالب</h3>
+          <label>الاسم الكامل<input type="text" placeholder="اسمك" required></label>
+          <label>البريد الإلكتروني<input type="email" placeholder="you@email.com" required></label>
+          <label>التخصص<input type="text" placeholder="مثال: جودة صحية" required></label>
+          <label>كلمة المرور<input type="password" placeholder="••••••" required></label>
+          <button class="btn primary" type="submit">إنشاء حساب</button>
+        </form>
+        <form class="card">
+          <h3>تسجيل الدخول</h3>
+          <label>البريد الإلكتروني<input type="email" placeholder="you@email.com" required></label>
+          <label>كلمة المرور<input type="password" placeholder="••••••" required></label>
+          <button class="btn primary" type="submit">دخول</button>
+          <a class="link" href="#">نسيت كلمة المرور؟</a>
+        </form>
+        <form class="card">
+          <h3>استعادة كلمة المرور</h3>
+          <label>البريد الإلكتروني<input type="email" placeholder="you@email.com" required></label>
+          <button class="btn ghost" type="submit">إرسال رابط الاستعادة</button>
+        </form>
+      </div>
     </section>
 
     <section class="testimonials" aria-label="آراء الطلاب">
@@ -324,12 +352,22 @@
         </div>
       </div>
       <div class="auth-forms">
-        <form class="card">
+        <form class="card student-register-form">
           <h3>تسجيل حساب طالب</h3>
           <label>الاسم الكامل<input type="text" placeholder="اسمك" required></label>
           <label>البريد الإلكتروني<input type="email" placeholder="you@email.com" required></label>
           <label>التخصص<input type="text" placeholder="مثال: جودة صحية" required></label>
+          <label>القسم المفضل
+            <select name="department" required>
+              <option value="الرعاية الصحية">الرعاية الصحية</option>
+              <option value="الجودة">الجودة</option>
+              <option value="الهندسة والتقنية">الهندسة والتقنية</option>
+              <option value="المحاسبة وإدارة الأعمال">المحاسبة وإدارة الأعمال</option>
+              <option value="الخدمات العامة">الخدمات العامة</option>
+            </select>
+          </label>
           <label>كلمة المرور<input type="password" placeholder="••••••" required></label>
+          <p class="hint">بعد التسجيل سيتم نقلك تلقائيًا إلى واجهة القسم لعرض واجباتك وبدء طلب جديد.</p>
           <button class="btn primary" type="submit">إنشاء حساب</button>
         </form>
         <form class="card">
@@ -345,6 +383,38 @@
           <button class="btn ghost" type="submit">إرسال رابط الاستعادة</button>
         </form>
       </div>
+    </section>
+
+    <section class="student-space card" id="student-space" aria-label="مسار الطالب للقسم المختار">
+      <div class="space-header">
+        <div>
+          <p class="eyebrow">توجيه ذكي بعد التسجيل</p>
+          <h2>واجهة مخصصة حسب القسم الذي اخترته</h2>
+          <p>يتم توجيه الطالب مباشرة إلى لوحة قسمه مع واجبات مقترحة وزر سريع لتقديم الطلب.</p>
+        </div>
+        <a class="btn ghost" href="https://wa.me/967781752213" target="_blank" rel="noreferrer">احتاج استشارة فورية</a>
+      </div>
+      <div class="space-grid">
+        <div class="space-card">
+          <h3 id="selected-department-title">اختر قسمك ليتم تخصيص المحتوى</h3>
+          <ul id="task-list" class="list tasks"></ul>
+          <button id="request-btn" class="btn primary" disabled>طلب واجب جديد</button>
+          <p class="hint">عند الضغط سيظهر إشعار فوري بتأكيد استلام الطلب.</p>
+        </div>
+        <div class="space-card muted">
+          <h4>كيفية العمل</h4>
+          <ol>
+            <li>إنشاء حساب وتحديد القسم.</li>
+            <li>يتم فتح واجهة القسم مع الواجبات الشائعة.</li>
+            <li>اضغط زر "طلب واجب جديد" لتأكيد الاستلام فورًا.</li>
+          </ol>
+          <div class="info-box">
+            <strong>استفسار عن الأسعار؟</strong>
+            <p>تواصل عبر واتساب ‎<a href="https://wa.me/967784141813" target="_blank" rel="noreferrer">+967 784141813</a>‎ لمعرفة الأسعار بدون عرضها مباشرة على الموقع.</p>
+          </div>
+        </div>
+      </div>
+      <div id="toast" class="toast" role="status">تم استلام طلبك</div>
     </section>
 
     <section id="order" class="order-form">
@@ -383,9 +453,7 @@
               <option>دكتوراه</option>
             </select>
           </label>
-          <label>السعر المتوقع
-            <input type="text" placeholder="نطاق سعري مبدئي" />
-          </label>
+          <div class="info-box">للاستفسار عن السعر تواصل واتساب ‎<a href="https://wa.me/967784141813" target="_blank" rel="noreferrer">+967 784141813</a>‎</div>
         </div>
         <label>وصف تفصيلي
           <textarea rows="4" placeholder="صف احتياجك الأكاديمي بالتفصيل"></textarea>
@@ -478,6 +546,7 @@
           <p class="eyebrow">الدفعات</p>
           <h2>طبقة دفع قابلة للتكامل</h2>
           <p>جاهزون للتوصيل مع Stripe أو PayPal أو بوابات محلية مع دعم الدفع الكامل أو الجزئي.</p>
+          <p class="hint">لا نعرض الأسعار مباشرة، راسل واتساب <a href="https://wa.me/967784141813" target="_blank" rel="noreferrer">‎+967 784141813</a>‎ للاشتراك أو التسعير.</p>
         </div>
         <a class="btn ghost" href="#">مزيد من التفاصيل</a>
       </div>
@@ -517,7 +586,8 @@
       <div class="contact-info card">
         <div class="map">خريطة موقع المكتب (Placeholder)</div>
         <ul class="list">
-          <li>واتساب: 966-555-555</li>
+          <li>استشارات فورية واتساب: <a href="https://wa.me/967781752213" target="_blank" rel="noreferrer">‎+967 781 752 213</a></li>
+          <li>استفسار عن الأسعار: <a href="https://wa.me/967784141813" target="_blank" rel="noreferrer">‎+967 784141813</a></li>
           <li>ايميل: support@rajabco.sa</li>
           <li>تويتر | لنكدإن | إنستغرام</li>
         </ul>
@@ -543,7 +613,8 @@
       <div>
         <h4>التواصل</h4>
         <ul>
-          <li>واتساب: 966-555-555</li>
+          <li>استشارات واتساب: <a href="https://wa.me/967781752213" target="_blank" rel="noreferrer">‎+967 781 752 213</a></li>
+          <li>أسعار الاشتراكات: <a href="https://wa.me/967784141813" target="_blank" rel="noreferrer">‎+967 784141813</a></li>
           <li>ايميل: support@rajabco.sa</li>
           <li>السوشال: تويتر | لنكدإن | إنستغرام</li>
         </ul>
@@ -563,6 +634,55 @@
     const navToggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('.nav');
     navToggle.addEventListener('click', () => nav.classList.toggle('open'));
+
+    const registrationForm = document.querySelector('.student-register-form');
+    const departmentSelect = registrationForm?.querySelector('select[name="department"]');
+    const studentSpace = document.getElementById('student-space');
+    const selectedDepartmentTitle = document.getElementById('selected-department-title');
+    const taskList = document.getElementById('task-list');
+    const requestBtn = document.getElementById('request-btn');
+    const toast = document.getElementById('toast');
+
+    const departmentTasks = {
+      'الرعاية الصحية': ['إعداد خطة جودة لقسم الطوارئ', 'تحليل مؤشرات رضا المرضى', 'مراجعة سياسات مكافحة العدوى'],
+      'الجودة': ['إعداد نموذج FMEA', 'تحليل RCA لحادثة', 'تصميم لوحة مؤشرات جودة'],
+      'الهندسة والتقنية': ['مراجعة كود مشروع التخرج', 'إعداد محاكاة CAD', 'توثيق متطلبات تقنية'],
+      'المحاسبة وإدارة الأعمال': ['بناء نموذج تدفق نقدي', 'تحليل قوائم مالية', 'تقرير جدوى مبسط'],
+      'الخدمات العامة': ['تنسيق مقترح بحثي', 'تدقيق لغوي كامل', 'إعداد عرض تقديمي'],
+    };
+
+    const renderTasks = (dept) => {
+      taskList.innerHTML = '';
+      departmentTasks[dept]?.forEach((task) => {
+        const li = document.createElement('li');
+        li.textContent = task;
+        taskList.appendChild(li);
+      });
+    };
+
+    const showToast = (message) => {
+      if (!toast) return;
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2600);
+    };
+
+    registrationForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const dept = departmentSelect?.value || 'قسمك';
+      selectedDepartmentTitle.textContent = `واجهة قسم ${dept}`;
+      renderTasks(dept);
+      requestBtn.disabled = false;
+      requestBtn.dataset.department = dept;
+      studentSpace.scrollIntoView({ behavior: 'smooth' });
+      showToast('تم تحويلك لواجهة قسمك بنجاح');
+    });
+
+    requestBtn?.addEventListener('click', (e) => {
+      e.preventDefault();
+      const dept = requestBtn.dataset.department || 'قسمك';
+      showToast(`تم استلام طلبك لقسم ${dept}`);
+    });
   </script>
 </body>
 </html>
