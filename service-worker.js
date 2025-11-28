@@ -1,11 +1,10 @@
-const CACHE_NAME = 'rajabco-pwa-v3';
+const CACHE_NAME = 'rajabco-pwa-v7';
 const ASSETS = [
-  '/',
-  '/index.html',
-  '/styles.css',
-  '/manifest.json',
-  '/icons/app-icon.svg',
-  '/icons/app-icon.svg.jpg'
+  './',
+  './index.html',
+  './styles.css',
+  './manifest.json',
+  './icons/app-icon.svg'
 ];
 
 self.addEventListener('install', (event) => {
@@ -33,7 +32,7 @@ self.addEventListener('fetch', (event) => {
         const clone = networkResponse.clone();
         caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
         return networkResponse;
-      }).catch(() => caches.match('/index.html'))
+      }).catch(() => caches.match('./index.html'))
     )
   );
 });
