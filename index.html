@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111622" />
   <title>راجـبكو للخدمات الطلابية – RAJABCO FOR STUDENTS SERVICES</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/svg+xml" sizes="192x192" href="icons/app-icon.svg.jpg" />
+  <link rel="apple-touch-icon" href="icons/app-icon.svg.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
@@ -730,6 +734,14 @@
       const dept = requestBtn.dataset.department || 'قسمك';
       showToast(`تم استلام طلبك لقسم ${dept}`);
     });
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js').catch((error) => {
+          console.error('SW registration failed', error);
+        });
+      });
+    }
   </script>
 </body>
 </html>
