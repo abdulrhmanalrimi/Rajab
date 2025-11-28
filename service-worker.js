@@ -1,10 +1,12 @@
-const CACHE_NAME = 'rajabco-pwa-v7';
+const CACHE_NAME = 'rajabco-pwa-v9';
 const ASSETS = [
   './',
   './index.html',
   './styles.css',
   './manifest.json',
-  './icons/app-icon.svg'
+  './icons/app-icon.svg',
+  './icons/app-icon-152.png',
+  './icons/app-icon-192.png'
 ];
 
 self.addEventListener('install', (event) => {
