@@ -9,7 +9,13 @@
   "theme_color": "#111622",
   "description": "RAJABCO for Students Services as an installable experience.",
   "icons": [
-  
+    {
+      "src": "icons/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+   },
+
     {
       "src": "icons/app-icon-192.png",
       "sizes": "192x192",
